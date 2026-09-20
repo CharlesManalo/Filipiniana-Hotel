@@ -21,6 +21,12 @@ npm start
 
 `build` produces a static website in `out/`. `start` serves that export locally on port 3001. Stop the dev server first if that port is already in use. The export can be hosted at the root of a static-hosting domain. No site has been published automatically.
 
+## GitHub Pages
+
+The repository includes a GitHub Actions workflow that builds and deploys the static export to GitHub Pages. In the repository settings, set **Pages > Build and deployment > Source** to **GitHub Actions**. The deployed project site will be available at `https://charlesmanalo.github.io/Filipiniana-Hotel/`.
+
+For a local production build using the project-site path, run `$env:NEXT_PUBLIC_BASE_PATH='/Filipiniana-Hotel'; npm run build` in PowerShell or `NEXT_PUBLIC_BASE_PATH=/Filipiniana-Hotel npm run build` in a POSIX shell.
+
 ## What the client sees
 
 - A custom cream, crimson, gold, and forest-green identity with Cormorant Garamond and Manrope.
@@ -47,20 +53,20 @@ Property photography was sourced from the hotel’s public website: https://fili
 
 `content/image-sources.json` records the original URLs. The selected assets were converted to local WebP files for the presentation. Public availability does not establish a license; obtain owner authorization for a public commercial launch.
 
-| Asset | Source file |
-| --- | --- |
-| hotel-pool.webp | 32.jpg |
-| deluxe.webp | 19.jpg |
-| suite.webp | 11.jpg |
-| executive.webp | 22.jpg |
-| suite-living.webp | 36.jpg |
-| terrace.webp | 02.jpg |
-| restaurant.webp | 29.jpg |
-| wedding.webp | 05.jpg |
-| conference.webp | 07.jpg |
-| celebration.webp | 25.jpg |
-| lobby.webp | 16.jpg |
-| entrance.webp | 39.jpg |
+| Asset             | Source file |
+| ----------------- | ----------- |
+| hotel-pool.webp   | 32.jpg      |
+| deluxe.webp       | 19.jpg      |
+| suite.webp        | 11.jpg      |
+| executive.webp    | 22.jpg      |
+| suite-living.webp | 36.jpg      |
+| terrace.webp      | 02.jpg      |
+| restaurant.webp   | 29.jpg      |
+| wedding.webp      | 05.jpg      |
+| conference.webp   | 07.jpg      |
+| celebration.webp  | 25.jpg      |
+| lobby.webp        | 16.jpg      |
+| entrance.webp     | 39.jpg      |
 
 ## Validation
 
