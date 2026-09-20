@@ -1,0 +1,3 @@
+import {MapPin,BedDouble,Utensils,CalendarHeart} from 'lucide-react';
+import Reveal from './Reveal';
+export default function TrustBadges(){return <section className="trust-strip container" aria-label="At a glance">{[[MapPin,'A convenient Calapan base','Near the city. Close to your plans.'],[BedDouble,'A room for your kind of stay','Deluxe, suite & executive rooms.'],[Utensils,'Good food, right here','Halcons’ Bar and Resto.'],[CalendarHeart,'Space to come together','Weddings, meetings & milestones.']].map(([Icon,title,text],i)=>{const I=Icon as typeof MapPin;return <Reveal delay={i*80} key={String(title)} className="trust-item"><I size={24}/><div><h3>{String(title)}</h3><p>{String(text)}</p></div></Reveal>})}</section>}

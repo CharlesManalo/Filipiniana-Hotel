@@ -1,0 +1,3 @@
+import Link from 'next/link';
+export function Emblem({className=''}:{className?:string}){return <svg className={className} viewBox="0 0 60 60" fill="none" aria-hidden="true"><circle cx="30" cy="30" r="5" stroke="currentColor"/>{Array.from({length:8},(_,i)=><ellipse key={i} cx="30" cy="16" rx="4.6" ry="10" stroke="currentColor" strokeWidth="1.2" transform={`rotate(${i*45} 30 30)`}/>)}<circle cx="30" cy="30" r="26" stroke="currentColor" strokeWidth=".6"/></svg>}
+export default function Brand(){return <Link href="/" className="brand" aria-label="Filipiniana Hotel Calapan home"><Emblem/><span>Filipiniana<small>HOTEL & CONVENTION CENTER</small></span></Link>}

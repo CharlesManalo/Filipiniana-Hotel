@@ -1,0 +1,8 @@
+'use client';
+import {useState} from 'react';
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+import {Menu,X,ArrowUpRight,Phone,MessageCircle,CalendarDays} from 'lucide-react';
+import Brand from './Brand';
+import {useHotel,track} from './HotelProvider';
+export default function Navbar(){const [open,setOpen]=useState(false);const {openInquiry,content}=useHotel();const pathname=usePathname();return <><header className="floating-nav"><nav aria-label="Main navigation"><div className="nav-links">{['Stay','Dine','Leisure','Events'].map(n=><Link className={pathname===`/${n.toLowerCase()}`?'active':''} key={n} href={n==='Stay'?'#experiences':n==='About'?'#welcome':`#${n.toLowerCase()}`} >{n}</Link>)}</div><Brand/><div className="nav-actions"><Link href="#welcome" className="about-link">Our story</Link><button className="button nav-book" onClick={()=>openInquiry()}>Check availability <ArrowUpRight size={15}/></button><button className="menu-button" onClick={()=>setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open?'Close menu':'Open menu'}>{open?<X/>:<Menu/>}</button></div></nav><div id="mobile-menu" className={`mobile-menu ${open?'open':''}`}>{['Stay','Dine','Leisure','Events','About','Contact','Gallery'].map(n=><Link key={n} href={n==='Stay'?'#experiences':n==='About'?'#welcome':`#${n.toLowerCase()}`}  onClick={()=>setOpen(false)}>{n}<ArrowUpRight size={14}/></Link>)}</div></header><div className="mobile-actions"><a href="tel:+63432886624" onClick={()=>track('phone_click')}><Phone size={18}/>Call</a><a href={content.hotel.messenger} target="_blank" rel="noreferrer"><MessageCircle size={18}/>Message</a><button onClick={()=>openInquiry()}><CalendarDays size={18}/>Inquire</button></div></>}

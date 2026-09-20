@@ -1,0 +1,6 @@
+'use client';
+import Image from 'next/image';
+import {ArrowUpRight,Utensils} from 'lucide-react';
+import {useHotel} from './HotelProvider';
+import Reveal,{Heading} from './Reveal';
+export default function Dining(){const {openInquiry}=useHotel();return <section id="dine" className="section container dining-section"><Reveal className="dining-photo image-card"><Image src="/images/restaurant.webp" alt="Tables set for a meal at Halcons’ Bar and Resto" fill sizes="(max-width: 768px) 100vw, 50vw"/><div className="dining-stamp"><Utensils size={23}/><span>GOOD FOOD.<br/>GOOD COMPANY.</span></div></Reveal><div className="dining-copy"><Heading label="HALCONS’ BAR AND RESTO" title={<>Good food belongs<br/>in the <em>plan.</em></>} description="An unhurried meal. A familiar Filipino favorite. A table with room for one more. Meet at Halcons’ for easy conversations and moments worth sharing."/><div className="dining-pills"><span>Filipino flavors</span><span>Group dining</span><span>Easy gatherings</span></div><button className="button" onClick={()=>openInquiry({category:'Dine',service:'halcons-dining'})}>Pull up a chair <ArrowUpRight size={17}/></button><button className="text-button" onClick={()=>openInquiry({category:'Dine',service:'halcons-dining'})}>Ask for the menu <ArrowUpRight size={16}/></button></div></section>}
